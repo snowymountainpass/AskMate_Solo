@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{%block content %}
+
+    <h1 style="color: darkblue">Login Page</h1>
+
+    <form method="post">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password"><br>
+
+        <input type="submit"value="Submit">
+
+    </form>
+    <br>
+    <br>
+    <p>Don't have an account? <a href="{{url_for('register')}}">Sign Up!</a> </p>
+
+{%endblock%}

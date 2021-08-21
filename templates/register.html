@@ -1,0 +1,28 @@
+{% extends "base_template.html" %}
+
+{%block content %}
+
+<h1 style="color: darkblue">Registration Page</h1>
+
+<form method="post">
+    <label for="username">Username: </label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password: </label>
+    <input type="text" id="password" name="password" required><br>
+
+    <label for="sex">Sex: </label>
+    <select id="sex" name="sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+    </select>
+
+    <label for="age">Age: </label>
+    <input type="number" id="age" name="age" value="13" min="13" max="150" required><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+{%endblock%}

@@ -1,0 +1,47 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+    <section>
+        <div>
+        <h1 style="color: darkred">Home Page</h1>
+        <p class="important" style="color: green">Welcome {{ username }}</p>
+        </div>
+        <br>
+        <br>
+        <div>
+            <a href="{{url_for('get_all_users')}}" >Show all users</a>
+        </div>
+    </section>
+    <br>
+    <br>
+    <section>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Question ID</td>
+                    <td>Title</td>
+                    <td>Message</td>
+                    <td>Submission Time</td>
+                    <td>User ID</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for content in information %}
+                    <tr>
+                        <td>{{content.id_question}}</td>
+                        <td>{{content.title}}</td>
+                        <td>{{content.message}}</td>
+                        <td>{{content.submission_time}}</td>
+                        <td>{{content.id_user}}</td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+
+        </table>
+        <br>
+        <br>
+        <a href="{{url_for('post_a_question')}}">Post a question</a><br>
+        <a href="{{url_for('logout')}}">Logout</a>
+    </section>
+{% endblock %}

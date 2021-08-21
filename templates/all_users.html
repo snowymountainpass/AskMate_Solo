@@ -1,0 +1,35 @@
+{% extends "base_template.html" %}
+
+{%block content %}
+    <div>
+    <h1>All registered users</h1>
+    </div>
+
+    <br><br>
+
+    <div>
+        <table class="table">
+                <thead>
+                    <tr>
+                        <td>Username</td>
+                        <td>Registration Date</td>
+                        <td>Sex</td>
+                        <td>Age</td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for content in information %}
+                        <tr>
+                            <td>{{content.username}}</td>
+                            <td>{{content.registration_date}}</td>
+                            <td>{{content.sex}}</td>
+                            <td>{{content.age}}</td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+
+        </table>
+    </div>
+
+{% endblock %}
